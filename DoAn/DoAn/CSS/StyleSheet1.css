@@ -1,0 +1,77 @@
+﻿html {
+    background-color: #214c84;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./img/img1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+body {
+    background-color: transparent;
+}
+
+.container {
+    padding: 50px 0;
+}
+
+.container form {
+    max-width: 1000px;
+    padding: 15px 80px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: whitesmoke;
+    /*opacity: 0.8;*/
+}
+
+.container form h2 {
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.container .item {
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.container .register {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #3f93ff;
+    color: white;
+    margin: 10px;
+    opacity: 0.9;
+    cursor: pointer;
+    width: 100px;
+}
+
+.container .register:hover {
+    opacity: 1;
+}
+
+a {
+    color: dodgerblue;
+}
+
+.container .signin {
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+    .container form {
+        padding: 50px 20px;
+    }
+}

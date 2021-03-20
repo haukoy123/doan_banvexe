@@ -1,0 +1,109 @@
+﻿#head2x_btnimkiem {
+    background: none;
+    color: white;
+    padding: 10px 10px 10px 0px;
+    font-size: 16px;
+    border: none;
+}
+
+#mautk {
+    background: #1db319;
+    display: inline-block;
+}
+
+    #mautk:hover {
+        background: #357d16;
+    }
+
+#btthem {
+    background: #e42a2a;
+}
+
+    #btthem:hover {
+        background: #b50a0a;
+    }
+
+.bt_qlnv {
+    font-size: 16px;
+    color: white;
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+}
+
+.TTNX_NV_TK {
+    border: 1px solid black;
+    border-radius: 4px;
+    background: white;
+    float: left;
+    padding: 5px;
+    margin: 5px;
+    font-size: 15px;
+}
+
+.css_intput {
+    width: 240px;
+    height: 23px;
+    font-size: 15px;
+}
+
+.css_nhapnv {
+    float: left;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+#nhap_nhaxe {
+    padding: 25px;
+    font-size: 15px;
+}
+
+.vien_ttnx_nv {
+    border: 1px solid black;
+    border-radius: 4px;
+    background: white;
+    float: left;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    height: 300px;
+    text-align: left;
+}
+
+.inp_nhaxe {
+    margin-bottom: 8px;
+    /*cursor: not-allowed/*;*/ /*biểu tượng chuột*/
+    /*readonly="False"*/ /*cho nhập k*/
+}
+
+.btn {
+    padding: 10px 15px;
+    border: 1px solid black;
+    background: #b5d2c8;
+    color: black;
+}
+
+    .btn:hover {
+        background: #6b9c8b;
+    }
+
+#them {
+    height: 400px;
+}
+
+#nut_gd_them {
+    float: right;
+    padding: 10px;
+    margin: 10px;
+}
+
+table#gd_them_cld_ns_nv {
+    position: absolute;
+}
+
+.tb_tk {
+    padding-left: 5px;
+    float: left;
+    background: #9ad5dc;
+    margin: 5px;
+    background: #e4ce2d;
+}

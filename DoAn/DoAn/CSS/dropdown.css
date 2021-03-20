@@ -1,0 +1,84 @@
+﻿#header .container div.register-login ul li.dropdown1 {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    float: right;
+}
+
+    #header .container div.register-login ul li.dropdown1 .dropbtn1 {
+        border: none;
+        cursor: pointer;
+    }
+
+    #header .container div.register-login ul li.dropdown1 .dropdown-content1 {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+        #header .container div.register-login ul li.dropdown1 .dropdown-content1 a {
+            color: black;
+            padding: 10px 14px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+            /*.dropbtn1 {
+    background-color: #1b9ce3;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown1 {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    float: right;
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content1 a {
+        color: black;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-top: 5px;
+        text-decoration: none;
+        display: block;
+        color: black;
+        padding: 10px 14px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+*/
+            #header .container div.register-login ul li.dropdown1 .dropdown-content1 a:hover {
+                background-color: #f1f1f1;
+                color: #1b9ce3;
+            }
+
+                #header .container div.register-login ul li.dropdown1 .dropdown-content1 a:hover:not(.active) {
+                    color: #1b9ce3;
+                }
+
+    #header .container div.register-login ul li.dropdown1:hover .dropdown-content1 {
+        display: block;
+    }
+
+    #header .container div.register-login ul li.dropdown1:hover .dropbtn1 {
+        background-color: #93e1f5;
+    }

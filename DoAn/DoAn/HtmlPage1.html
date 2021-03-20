@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Font Awesome Icons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/v4-shims.css">
+</head>
+<body>
+    <div id="macdinh">
+        <div id="menuleft" class="menu">
+            <img src="LOGO.png" style="width:100%" >
+            <ul>
+                <li class="vienmenu"><i class="fas fa-id-card iconstyle"></i><a href="">Quản Lý Tài Khoản</a></li>
+                <li class="vienmenu"><i class="fas fa-bed iconstyle"></i><a href="">Quản Lý Nhân Viên</a></li>
+                <li class="vienmenu"> <i class="fas fa-shuttle-van iconstyle"></i><a href="">Quản Lý Nhà Xe</a></li>
+                <li class="vienmenu"><i class="fas fa-user-cog iconstyle"></i><a href="">Cài Đặt Cá Nhân</a></li>
+            </ul>
+        </div>
+        <div id="right">
+            <div id="head" class="menu">
+                <div id="head1">
+                    <div id="menurighrt1">
+                        <button id="openNav" style="display: none;" onclick="iconopen()">
+                            <i class="fa fa-bars iconmenu"></i>
+                        </button>
+                        <button id="closeNav" style="display: block;" onclick="iconclose()">
+                            <i class="fas fa-chevron-left iconmenu"></i>
+                        </button>
+                    </div>
+                    <div id="menurighrt2">
+                        người dùng
+                    </div>
+                </div>
+                <div id="head2">
+                    dftu6
+                </div>
+            </div>
+            <div id="content">
+                sdjbjajebfwbefe vriweurg ẻuugou
+            </div>
+        </div>
+        <div id="fooder">
+            <p><b>Công ty TNHH Thương Mại Dịch Vụ VEXEONLINE</b></p>
+            <p>Địa chỉ: 96 Định Công, Hoàng Mai, Hà Nội, Việt Nam</p>
+            <p>Bản quyền © 2020 thuộc về VEXEONLINE.Com</p>
+        </div>
+    </div>
+
+    <script>
+        function iconopen() {
+            document.getElementById("menuleft").style.display = "block";
+            document.getElementById("closeNav").style.display = "block";
+            document.getElementById("openNav").style.display = "none";
+
+            document.getElementById("right").style.marginLeft = "20%";
+            document.getElementById("right").style.width = "80%";
+
+        }
+        function iconclose() {
+            document.getElementById("menuleft").style.display = "none";
+            document.getElementById("closeNav").style.display = "none";
+            document.getElementById("openNav").style.display = "block";
+
+            document.getElementById("right").style.marginLeft = "0%";
+            document.getElementById("right").style.width = "100%";
+
+        }
+    </script>
+</body>
+</html>

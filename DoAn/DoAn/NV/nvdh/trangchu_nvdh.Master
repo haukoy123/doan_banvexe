@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#"  AutoEventWireup="true" CodeBehind="trangchu_nvdh.master.cs" Inherits="DoAn.NV.nvdh.trangchu_nvdh" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder ID="link" runat="server"></asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/v4-shims.css">
+    <link href="../../CSS/admin.css" type="text/css" rel="stylesheet" />
+    <script src="../../js/trangchuadmin.js" type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="fooder">
+                <p><b>Công ty TNHH Thương Mại Dịch Vụ VEXEONLINE</b></p>
+                <p>Địa chỉ: 96 Định Công, Hoàng Mai, Hà Nội, Việt Nam</p>
+                <p>Bản quyền © 2020 thuộc về VEXEONLINE.Com</p>
+            </div>
+        <div id="macdinh">
+            <div id="menuleft">
+                <div id="menuleft1">
+                    <a href="#">
+                        <img src="../../img/LOGO.png" style="width: 100%" />
+                    </a>
+                    <ul>
+                        <li class="vienmenu"><i class="fas fa-ticket-alt iconstyle"></i><a href="#">Quản Lý Vé</a></li>
+                        <li class="vienmenu"><i class="fas fa-shuttle-van iconstyle"></i><a href="QLchuyenxe.aspx">Quản Lý Chuyến Xe</a></li>
+                        <li class="vienmenu"><i class="fas fa-clock iconstyle"></i><a href="#">Quản Lý Lịch Trình</a></li>
+                        <li class="vienmenu"><i class="fas fa-route iconstyle"></i><a href="#">Quản Lý Tuyến</a></li>
+                        <li class="vienmenu"><i class="fas fa-bed iconstyle"></i><a href="#">Quản Lý Nhân Viên</a></li>
+                        <li class="vienmenu"><i class="fas fa-user iconstyle"></i><a href="#">Quản Lý Tài Khoản</a></li>
+                    </ul>
+                </div>
+                <div id="menuleft2">
+                    <a href="#">
+                        <img src="../../img/LOGO.png" style="width: 100%" />
+                    </a>
+                    <ul>
+                        <li class="vienmenu2"><a href="#"><i class="fas fa-ticket-alt iconstyle"></i></a>
+                            <div class="txt">
+                                Quản Lý Vé
+                            </div>
+                        </li>
+                        <li class="vienmenu2"><a href="#"><i class="fas fa-shuttle-van iconstyle"></i></a>
+                            <div class="txt">
+                                Quản Lý Chuyến Xe
+                            </div>
+                        </li>
+                        <li class="vienmenu2"><a href="#"><i class="fas fa-clock iconstyle"></i></a>
+                            <div class="txt">
+                                Quản Lý Lịch Trình
+                            </div>
+                        </li>
+                        <li class="vienmenu2"><a href="#"><i class="fas fa-route iconstyle"></i></a>
+                            <div class="txt">
+                                Quản Lý Tuyến
+                            </div>
+                        </li>
+                        <li class="vienmenu2"><a href="#"><i class="fas fa-bed iconstyle"></i></a>
+                            <div class="txt">
+                                Quản Lý Nhân Viên
+                            </div>
+                        </li>
+                        <li class="vienmenu2"><a href="#"><i class="fas fa-user iconstyle"></i></a>
+                            <div class="txt">
+                                Quản Lý Tài Khoản
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="right">
+                <div id="head" class="menu">
+                    <div id="head1">
+                        <div id="menurighrt1">
+                            <i id="closeNav" class="fas fa-chevron-left iconmenu" onclick="iconclose()" style="display: block;"></i>
+                            <i class="fa fa-bars iconmenu" id="openNav" style="display: none;" onclick="iconopen()" ></i>
+                        </div>
+                        <div id="menurighrt2">
+                            <asp:Label ID="lbtendn" runat="server" Text=""></asp:Label>
+                            <asp:LinkButton ID="btndangxuat" CssClass="linkbutton" runat="server" OnClick="btndangxuat_Click" >Đăng xuất</asp:LinkButton>
+                            <asp:LinkButton ID="btndangnhap" CssClass="linkbutton" runat="server" OnClick="btndangnhap_Click" >Đăng nhập</asp:LinkButton>
+                        </div>
+                    </div>
+                    <div id="head2">
+                        <asp:ContentPlaceHolder ID="head2x" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <div id="content">
+                    <div id="them111" runat="server" visible="true">
+                        <asp:ContentPlaceHolder ID="gd_them" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <asp:ContentPlaceHolder ID="noidung" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

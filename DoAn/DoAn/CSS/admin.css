@@ -1,0 +1,185 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial,Microsoft YaHei,Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,SimSun,sans-serif;
+}
+
+#head {
+    border-bottom: 1px solid rgb(184, 182, 182);
+    box-sizing: border-box;
+    margin: 0px 5px;
+}
+
+#head1 {
+    height: 60px;
+    vertical-align: middle;
+}
+
+#head2 {
+    text-align: right;
+    margin: 10px 0px;
+}
+
+#menuleft1 {
+    width: 16%;
+    text-align: left;
+    background-color: #131432;
+    height: 100%;
+    position: fixed;
+}
+
+#menuleft2 {
+    width: 55px;
+    text-align: left;
+    background-color: #131432;
+    height: 100%;
+    display: none;
+    position: fixed;
+}
+
+#macdinh #menuleft #menuleft1 ul li a {
+    color: white;
+    padding-left: 15px;
+}
+
+a, li {
+    list-style: none;
+    text-decoration: none;
+    font-size: 16px;
+    /*color: black;*/
+}
+
+#macdinh #menuleft #menuleft1 ul {
+    padding-left: 10px;
+}
+
+#macdinh #menuleft #menuleft2 ul {
+    padding: 0px;
+    text-align: center;
+}
+
+i {
+    padding: 0px;
+}
+
+li {
+    z-index: 1;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.vienmenu:hover {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    background-color: rgba(159, 159, 245, 0.568);
+}
+
+.vienmenu2:hover .txt {
+    display: block;
+}
+
+.vienmenu2:hover {
+    background-color: rgba(159, 159, 245, 0.568);
+}
+
+.iconmenu {
+    padding: 10px;
+    font-size: 24px;
+}
+
+#menurighrt1 {
+    width: 20%;
+    box-sizing: border-box;
+    float: left;
+}
+
+#menurighrt2 {
+    width: 80%;
+    text-align: right;
+    box-sizing: border-box;
+    float: right;
+    margin: 20px;
+}
+
+#macdinh #head #head1 #menurighrt1 i:hover {
+    background: rgb(175, 175, 179);
+}
+
+.iconstyle {
+    font-size: 24px;
+    color: white;
+    font-size: 20px;
+    width:20px;
+}
+
+#macdinh #head #head1 #menurighrt1 i {
+    background-color: rgb(236, 234, 234);
+    padding: 13px;
+    position: fixed;
+    margin-left: -5px;
+    margin-top: 550px;
+    width: 20px;
+    height: 20px;
+}
+
+#macdinh {
+    width: 100%;
+}
+
+#fooder {
+    font-size: 14px;
+    float: left;
+    width: 100%;
+    position: fixed;
+    padding: 5px;
+    text-align: center;
+    margin-top: 520px;
+    background: rgb(219, 214, 214);
+}
+
+#right {
+    margin-left: 16%;
+}
+
+.txt {
+    position: absolute;
+    margin-left: 56px;
+    margin-top: -34px;
+    background: black;
+    color: white;
+    padding: 13px;
+    font-size: 13px;
+    width: 120px;
+    border-radius: 5px;
+    display: none;
+}
+
+    .txt::after {
+        content: "";
+        border-width: 12px 12px;
+        border-style: solid;
+        border-color: transparent black transparent transparent;
+        position: absolute;
+        left: -22px;
+        top: 8px;
+    }
+
+.linkbutton:hover {
+    color: blue;
+}
+
+.linkbutton {
+    color: black;
+}
+
+#content {
+    margin: 10px 0px;
+    padding: 10px 5px 10px 5px;
+}
+
+#hien_them {
+    background: white;
+    position: fixed;
+    border-radius: 4px;
+    background: #636363;
+}
