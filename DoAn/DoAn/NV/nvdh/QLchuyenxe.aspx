@@ -9,13 +9,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="head2x" runat="server">
     <div id="menuhead" runat="server">
         <div class="tb_tk">
-            <asp:Label ID="Label19" runat="server" Text="Nhà Xe"></asp:Label>
+            <%--<asp:Label ID="Label19" runat="server" Text="Nhà Xe"></asp:Label>
             <asp:DropDownList ID="ddl_dsnhaxe" runat="server" Font-Size="15px" Height="30px" Width="150px">
-            </asp:DropDownList>
+            </asp:DropDownList>--%>
         </div>
         <div class="tb_tk">
-            <asp:Label ID="Label18" runat="server" Text="Số Điện Thoại"></asp:Label>
-            <asp:TextBox ID="tb_tk_sdt" runat="server" Height="24px" ></asp:TextBox>
+            <asp:Label ID="Label18" runat="server" Text="Ngày Đi"></asp:Label>
+            <asp:TextBox ID="tb_tk_sdt" runat="server" TextMode="Date" Height="24px" ></asp:TextBox>
         </div>
 
         <div id="btthem" class="bt_qlnv">
@@ -43,19 +43,18 @@
                 <br />
                 <asp:Label ID="Label1" runat="server" Text="Tên tuyến"></asp:Label>
                 <br />
-                <asp:DropDownList ID="ddl_dstuyenxe" runat="server" Height="29px" Width="245px">
+                <asp:DropDownList ID="ddl_dstuyenxe" OnSelectedIndexChanged="ddl_dstuyenxe_SelectedIndexChanged" AutoPostBack="true" runat="server" Height="29px" Width="245px">
                 </asp:DropDownList>
                 <br />
                 <br />
                 <asp:Label ID="Label2" runat="server" Text="Nhân viên phụ trách"></asp:Label>
                 <br />
-                <asp:DropDownList ID="ddl_nv" runat="server" Height="29px" Width="245px">
-                </asp:DropDownList>
+                <asp:TextBox ID="tb_nvxe" Enabled="false" runat="server" CssClass="css_intput" ></asp:TextBox>
                 <br />
                 <br />
                 <asp:Label ID="Label4" runat="server" Text="Xe"></asp:Label>
                 <br />
-                <asp:DropDownList ID="ddl_ds_xe" runat="server" Height="29px" Width="245px">
+                <asp:DropDownList ID="ddl_ds_xe" OnSelectedIndexChanged="ddl_ds_xe_SelectedIndexChanged" AutoPostBack="true" runat="server" Height="29px" Width="245px">
                 </asp:DropDownList>
             </div>
             <div class="css_nhapnv" style="margin: 15px;">
@@ -99,7 +98,7 @@
             <Columns>
                 <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                     <ItemTemplate>
-                        <asp:LinkButton ID="sua" runat="server" CommandArgument='<%#Eval("machuyenxe") + ";" +Eval("FK_manv")%>' OnClick="sua_click">Sửa</asp:LinkButton>
+                        <asp:LinkButton ID="sua" runat="server" CommandArgument='<%#Eval("machuyenxe") %>' OnClick="sua_click">Sửa</asp:LinkButton>
                     </ItemTemplate>
 
                     <ItemStyle HorizontalAlign="Center"></ItemStyle>

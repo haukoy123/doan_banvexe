@@ -1,0 +1,27 @@
+﻿#chitietve_fChitiet {
+    position: fixed;
+    z-index: 1;
+   margin-top: -100px;
+}
+
+#fChitiet .chitiet_container {
+    padding: 20px;
+}
+
+div.ct_ve {
+    padding-bottom: 20px;
+}
+
+.txt_ct {
+    Height: 35px;
+    width: 190px;
+}
+
+.btn_ctxong {
+    border: 1px solid;
+    background-color: #1b9ce3;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+}

@@ -29,12 +29,11 @@
                         <img src="../../img/LOGO.png" style="width: 100%" />
                     </a>
                     <ul>
-                        <li class="vienmenu"><i class="fas fa-ticket-alt iconstyle"></i><a href="#">Quản Lý Vé</a></li>
+                        <li class="vienmenu"><i class="fas fa-ticket-alt iconstyle"></i><a href="QLvexe.aspx">Quản Lý Vé</a></li>
                         <li class="vienmenu"><i class="fas fa-shuttle-van iconstyle"></i><a href="QLchuyenxe.aspx">Quản Lý Chuyến Xe</a></li>
-                        <li class="vienmenu"><i class="fas fa-clock iconstyle"></i><a href="#">Quản Lý Lịch Trình</a></li>
-                        <li class="vienmenu"><i class="fas fa-route iconstyle"></i><a href="#">Quản Lý Tuyến</a></li>
-                        <li class="vienmenu"><i class="fas fa-bed iconstyle"></i><a href="#">Quản Lý Nhân Viên</a></li>
-                        <li class="vienmenu"><i class="fas fa-user iconstyle"></i><a href="#">Quản Lý Tài Khoản</a></li>
+                        <li class="vienmenu"><i class="fas fa-bus-alt iconstyle"></i><a href="QLxe.aspx">Quản Lý Xe</a></li>
+                        <li class="vienmenu"><i class="fas fa-bed iconstyle"></i><a href="QLnhanvien.aspx">Quản Lý Nhân Viên</a></li>
+                        <li class="vienmenu"><i class="fas fa-user iconstyle"></i><a href="TKcanhan.aspx">Tài Khoản Cá Nhân</a></li>
                     </ul>
                 </div>
                 <div id="menuleft2">
@@ -42,32 +41,28 @@
                         <img src="../../img/LOGO.png" style="width: 100%" />
                     </a>
                     <ul>
-                        <li class="vienmenu2"><a href="#"><i class="fas fa-ticket-alt iconstyle"></i></a>
+                        <li class="vienmenu2"><a href="QLvexe.aspx"><i class="fas fa-ticket-alt iconstyle"></i></a>
                             <div class="txt">
                                 Quản Lý Vé
                             </div>
                         </li>
-                        <li class="vienmenu2"><a href="#"><i class="fas fa-shuttle-van iconstyle"></i></a>
+                        <li class="vienmenu2"><a href="QLchuyenxe.aspx"><i class="fas fa-shuttle-van iconstyle"></i></a>
                             <div class="txt">
                                 Quản Lý Chuyến Xe
                             </div>
                         </li>
-                        <li class="vienmenu2"><a href="#"><i class="fas fa-clock iconstyle"></i></a>
+                        <li class="vienmenu2"><a href="QLxe.aspx"><i class="fas fa-bus-alt iconstyle"></i></a>
                             <div class="txt">
-                                Quản Lý Lịch Trình
+                                Quản Lý Xe
                             </div>
                         </li>
-                        <li class="vienmenu2"><a href="#"><i class="fas fa-route iconstyle"></i></a>
-                            <div class="txt">
-                                Quản Lý Tuyến
-                            </div>
-                        </li>
-                        <li class="vienmenu2"><a href="#"><i class="fas fa-bed iconstyle"></i></a>
+                        
+                        <li class="vienmenu2"><a href="QLnhanvien.asp"><i class="fas fa-bed iconstyle"></i></a>
                             <div class="txt">
                                 Quản Lý Nhân Viên
                             </div>
                         </li>
-                        <li class="vienmenu2"><a href="#"><i class="fas fa-user iconstyle"></i></a>
+                        <li class="vienmenu2"><a href="TKcanhan.aspx"><i class="fas fa-user iconstyle"></i></a>
                             <div class="txt">
                                 Quản Lý Tài Khoản
                             </div>

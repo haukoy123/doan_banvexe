@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="Khachhang.master.cs" Inherits="DoAn.khachhang.Khachhang" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Khachhang.master.cs" Inherits="DoAn.khachhang.Khachhang" %>
 <!DOCTYPE html>
 
 <html>
@@ -13,7 +13,8 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div id="header">
+    <form runat="server">
+            <div id="header">
         <div class="container">
             <div class="logo">
                 <a href="#">
@@ -52,12 +53,12 @@
 
                 <div class="dropdown1" id="btnuser" runat="server">
                     <button class="dropbtn1"><span class="fa fa-user-circle-o" style="font-size: 20px;"></span><span class="fa fa-caret-down" style="font-size: 20px; margin-left: 10px;"></span></button>
-                    <div class="dropdown-content1">
-                        <a href="../khachhang/QLkhachhang.aspx"><span class="fa fa-address-book-o" style="font-size: 20px; margin-right: 10px;"></span>Thông tin cá nhân</a>
-                        <a href="../khachhang/Vecuatoi.aspx"><span class="fa fa-ticket" style="font-size: 20px; margin-right: 10px;"></span>Vé của tôi</a>
-                        <a href="../khachhang/Nhanxet.aspx"><span class="fa fa-edit" style="font-size: 20px; margin-right: 10px;"></span>Nhận xét của tôi</a>
-                        <a href="~/khachhang/Doimatkhau.aspx"><span class="fa fa-edit" style="font-size: 20px; margin-right: 10px;"></span>Đổi mật khẩu</a>
-                        <a href="index.aspx"><span class="fa fa-sign-out" style="font-size: 20px; margin-right: 10px;"></span>Đăng xuất</a>
+                    <div class="dropdown-content1" runat="server">
+                        <asp:LinkButton runat="server" ID="btnQLKH" OnClick="btnQLKH_Click"><i class="fa fa-address-book-o" style="font-size: 20px; margin-right: 10px;"></i>Thông tin cá nhân</asp:LinkButton>
+                        <asp:LinkButton runat="server" ID="btnVecuatoi" OnClick="btnVecuatoi_Click"><i class="fa fa-ticket" style="font-size: 20px; margin-right: 10px;"></i>Vé của tôi</asp:LinkButton>
+                        <asp:LinkButton runat="server" ID="btnNhanxe" OnClick="btnNhanxe_Click"><span class="fa fa-edit" style="font-size: 20px; margin-right: 10px;"></span>Nhận xét của tôi</asp:LinkButton>
+                        <asp:LinkButton runat="server" ID="btnDoimk" OnClick="btnDoimk_Click"><i class="fa fa-edit" style="font-size: 20px; margin-right: 10px;"></i>Đổi mật khẩu</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="linkbtn_Click"><i class="fa fa-sign-out" style="font-size: 20px; margin-right: 10px;"></i>Đăng xuất</asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -67,10 +68,10 @@
         <div class="container">
             <ul class="menu">
                 <li><a href="#">Trang chủ</a></li>
+                <li><a href="../QLDatveKH.aspx">Đặt vé</a></li>
                 <li><a href="#">Khuyến mãi</a></li>
                 <li><a href="#">Về chúng tôi</a></li>
                 <li><a href="#">Hỗ trợ</a></li>
-                <li><a href="#">Hotline</a></li>
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">Xem thêm</a>
                     <div class="dropdown-content">
@@ -86,11 +87,11 @@
         <div class="container">
             <div class="content-left">
                 <ul>
-                    <li><a href="qlkhachhang.aspx"><span class="fa fa-address-book-o" style="font-size: 20px; margin-right: 10px;"></span>Thông tin cá nhân</a></li>
-                    <li><a href="#"><span class="fa fa-ticket" style="font-size: 20px; margin-right: 10px;"></span>Vé của tôi</a></li>
-                    <li><a href="#"><span class="fa fa-edit" style="font-size: 20px; margin-right: 10px;"></span>Nhận xét của tôi</a></li>
-                    <li><a href="#"><span class="fa fa-user-circle-o" style="font-size: 20px; margin-right: 10px;"></span>Đổi mật khẩu</a></li>
-                    <li><a href="index.aspx"><span class="fa fa-sign-out" style="font-size: 20px; margin-right: 10px;"></span>Đăng xuất</a></li>
+                    <li><asp:LinkButton runat="server" ID="LinkButton2" OnClick="btnQLKH_Click"><i class="fa fa-address-book-o" style="font-size: 20px; margin-right: 10px;"></i>Thông tin cá nhân</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="LinkButton3" OnClick="btnVecuatoi_Click"><i class="fa fa-ticket" style="font-size: 20px; margin-right: 10px;"></i>Vé của tôi</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="LinkButton4" OnClick="btnNhanxe_Click"><span class="fa fa-edit" style="font-size: 20px; margin-right: 10px;"></span>Nhận xét của tôi</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="LinkButton5" OnClick="btnDoimk_Click"><i class="fa fa-edit" style="font-size: 20px; margin-right: 10px;"></i>Đổi mật khẩu</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="linkbtn" runat="server" OnClick="linkbtn_Click"><i class="fa fa-sign-out" style="font-size: 20px; margin-right: 10px;"></i>Đăng xuất</asp:LinkButton></li>
                 </ul>
             </div>
             <div class="content-right">
@@ -103,13 +104,22 @@
                 <asp:ContentPlaceHolder runat="server" ID="Vecuatoi">
                 </asp:ContentPlaceHolder>
 
+                <asp:ContentPlaceHolder runat="server" ID="chitietve">
+                </asp:ContentPlaceHolder>
+
                 <asp:ContentPlaceHolder runat="server" ID="Chuyendadi">
                 </asp:ContentPlaceHolder>
 
                 <asp:ContentPlaceHolder runat="server" ID="Chuyendahuy">
                 </asp:ContentPlaceHolder>
 
+                <asp:ContentPlaceHolder runat="server" ID="thongbao">
+                </asp:ContentPlaceHolder>
+
                 <asp:ContentPlaceHolder runat="server" ID="Nhanxet">
+                </asp:ContentPlaceHolder>
+
+                <asp:ContentPlaceHolder runat="server" ID="fsua_nhanxet">
                 </asp:ContentPlaceHolder>
             </div>
         </div>
@@ -122,5 +132,6 @@
             <p>Bản quyền © 2020 thuộc về VEXEONLINE.com</p>
         </div>
     </div>
+    </form>
 </body>
 </html>

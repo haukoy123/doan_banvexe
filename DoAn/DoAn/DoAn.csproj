@@ -72,21 +72,37 @@
     <Content Include="admin\QLnhanvien.aspx" />
     <Content Include="admin\QLnhaxe.aspx" />
     <Content Include="admin\QLtaikhoan.aspx" />
+    <Content Include="admin\QLtuyen.aspx" />
     <Content Include="CSS\admin.css" />
     <Content Include="CSS\admin_qlnv.css" />
+    <Content Include="CSS\chitietve.css" />
     <Content Include="CSS\Datve.css" />
     <Content Include="CSS\dropdown.css" />
     <Content Include="CSS\Homemaster.css" />
     <Content Include="CSS\index.css" />
+    <Content Include="CSS\Nhanxet.css" />
     <Content Include="CSS\QLKH.css" />
+    <Content Include="CSS\QLNhaxe.css" />
+    <Content Include="CSS\slideshow.css" />
+    <Content Include="CSS\Thongtincanhan.css" />
     <Content Include="Global.asax" />
     <Content Include="HtmlPage1.html" />
     <Content Include="img\icon-paper-plane.png" />
     <Content Include="img\ICON-PHONE-CALL.png" />
     <Content Include="img\img1.jpg" />
     <Content Include="img\LOGO.png" />
+    <Content Include="img\slide1.png" />
+    <Content Include="img\slide2.png" />
+    <Content Include="img\slide3.png" />
+    <Content Include="img\slide4.png" />
+    <Content Include="img\vanminh.jfif" />
+    <Content Include="img\vanminh2.jpg" />
+    <Content Include="img\vanminh3.jpg" />
+    <Content Include="img\xekhach.jpg" />
+    <Content Include="img\xekhach2.jpg" />
     <Content Include="index.aspx" />
     <Content Include="js\admin_ttcanhan.js" />
+    <Content Include="js\slideshow.js" />
     <Content Include="js\trangchuadmin.js" />
     <Content Include="js\uudai.js" />
     <Content Include="khachhang\Chuyendadi.aspx" />
@@ -96,9 +112,22 @@
     <Content Include="khachhang\Qlkhachhang.aspx" />
     <Content Include="khachhang\Vecuatoi.aspx" />
     <Content Include="login.aspx" />
-    <Content Include="logout.aspx" />
+    <Content Include="Nhaxe\Nhaxe.aspx" />
+    <Content Include="NV\nvbv\QLchuyenxe.aspx" />
+    <Content Include="NV\nvbv\Qlvexe.aspx" />
+    <Content Include="NV\nvbv\trangchu_nvbv.aspx" />
+    <Content Include="NV\nvbv\TTcanhan.aspx" />
     <Content Include="NV\nvdh\QLchuyenxe.aspx" />
+    <Content Include="NV\nvdh\QLnhanvien.aspx" />
+    <Content Include="NV\nvdh\QLvexe.aspx" />
+    <Content Include="NV\nvdh\QLxe.aspx" />
+    <Content Include="NV\nvdh\TKcanhan.aspx" />
     <Content Include="NV\nvdh\trangchu_nvdh.aspx" />
+    <Content Include="NV\nvxe\Lichphancong.aspx" />
+    <Content Include="NV\nvxe\QLchuyendi.aspx" />
+    <Content Include="NV\nvxe\TKcanhan.aspx" />
+    <Content Include="NV\nvxe\trangchunvxe.aspx" />
+    <Content Include="QLDatveKH.aspx" />
     <Content Include="register.aspx" />
     <Content Include="CSS\Style.css" />
     <Content Include="CSS\StyleSheet1.css" />
@@ -132,6 +161,13 @@
     </Compile>
     <Compile Include="admin\QLtaikhoan.aspx.designer.cs">
       <DependentUpon>QLtaikhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\QLtuyen.aspx.cs">
+      <DependentUpon>QLtuyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\QLtuyen.aspx.designer.cs">
+      <DependentUpon>QLtuyen.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\trangchuadmin.Master.cs">
       <DependentUpon>trangchuadmin.Master</DependentUpon>
@@ -216,12 +252,54 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="logout.aspx.cs">
-      <DependentUpon>logout.aspx</DependentUpon>
+    <Compile Include="Nhaxe\Nhaxe.aspx.cs">
+      <DependentUpon>Nhaxe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="logout.aspx.designer.cs">
-      <DependentUpon>logout.aspx</DependentUpon>
+    <Compile Include="Nhaxe\Nhaxe.aspx.designer.cs">
+      <DependentUpon>Nhaxe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nhaxe\Nhaxe.Master.cs">
+      <DependentUpon>Nhaxe.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nhaxe\Nhaxe.Master.designer.cs">
+      <DependentUpon>Nhaxe.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvbv\nvbanve.Master.cs">
+      <DependentUpon>nvbanve.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvbv\nvbanve.Master.designer.cs">
+      <DependentUpon>nvbanve.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvbv\QLchuyenxe.aspx.cs">
+      <DependentUpon>QLchuyenxe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvbv\QLchuyenxe.aspx.designer.cs">
+      <DependentUpon>QLchuyenxe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvbv\Qlvexe.aspx.cs">
+      <DependentUpon>Qlvexe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvbv\Qlvexe.aspx.designer.cs">
+      <DependentUpon>Qlvexe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvbv\trangchu_nvbv.aspx.cs">
+      <DependentUpon>trangchu_nvbv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvbv\trangchu_nvbv.aspx.designer.cs">
+      <DependentUpon>trangchu_nvbv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvbv\TTcanhan.aspx.cs">
+      <DependentUpon>TTcanhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvbv\TTcanhan.aspx.designer.cs">
+      <DependentUpon>TTcanhan.aspx</DependentUpon>
     </Compile>
     <Compile Include="NV\nvdh\QLchuyenxe.aspx.cs">
       <DependentUpon>QLchuyenxe.aspx</DependentUpon>
@@ -229,6 +307,34 @@
     </Compile>
     <Compile Include="NV\nvdh\QLchuyenxe.aspx.designer.cs">
       <DependentUpon>QLchuyenxe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvdh\QLnhanvien.aspx.cs">
+      <DependentUpon>QLnhanvien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvdh\QLnhanvien.aspx.designer.cs">
+      <DependentUpon>QLnhanvien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvdh\QLvexe.aspx.cs">
+      <DependentUpon>QLvexe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvdh\QLvexe.aspx.designer.cs">
+      <DependentUpon>QLvexe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvdh\QLxe.aspx.cs">
+      <DependentUpon>QLxe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvdh\QLxe.aspx.designer.cs">
+      <DependentUpon>QLxe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvdh\TKcanhan.aspx.cs">
+      <DependentUpon>TKcanhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvdh\TKcanhan.aspx.designer.cs">
+      <DependentUpon>TKcanhan.aspx</DependentUpon>
     </Compile>
     <Compile Include="NV\nvdh\trangchu_nvdh.aspx.cs">
       <DependentUpon>trangchu_nvdh.aspx</DependentUpon>
@@ -244,7 +350,49 @@
     <Compile Include="NV\nvdh\trangchu_nvdh.Master.designer.cs">
       <DependentUpon>trangchu_nvdh.Master</DependentUpon>
     </Compile>
+    <Compile Include="NV\nvxe\Lichphancong.aspx.cs">
+      <DependentUpon>Lichphancong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvxe\Lichphancong.aspx.designer.cs">
+      <DependentUpon>Lichphancong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvxe\QLchuyendi.aspx.cs">
+      <DependentUpon>QLchuyendi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvxe\QLchuyendi.aspx.designer.cs">
+      <DependentUpon>QLchuyendi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvxe\TKcanhan.aspx.cs">
+      <DependentUpon>TKcanhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvxe\TKcanhan.aspx.designer.cs">
+      <DependentUpon>TKcanhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvxe\trangchunvxe.aspx.cs">
+      <DependentUpon>trangchunvxe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvxe\trangchunvxe.aspx.designer.cs">
+      <DependentUpon>trangchunvxe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NV\nvxe\trangchunvxe.Master.cs">
+      <DependentUpon>trangchunvxe.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NV\nvxe\trangchunvxe.Master.designer.cs">
+      <DependentUpon>trangchunvxe.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLDatveKH.aspx.cs">
+      <DependentUpon>QLDatveKH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLDatveKH.aspx.designer.cs">
+      <DependentUpon>QLDatveKH.aspx</DependentUpon>
+    </Compile>
     <Compile Include="register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -258,6 +406,9 @@
     <Content Include="admin\trangchuadmin.Master" />
     <Content Include="NV\nvdh\trangchu_nvdh.Master" />
     <Content Include="khachhang\Khachhang.master" />
+    <Content Include="NV\nvbv\nvbanve.Master" />
+    <Content Include="NV\nvxe\trangchunvxe.Master" />
+    <Content Include="Nhaxe\Nhaxe.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -266,10 +417,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NV\nvbv\" />
-    <Folder Include="NV\nvxe\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

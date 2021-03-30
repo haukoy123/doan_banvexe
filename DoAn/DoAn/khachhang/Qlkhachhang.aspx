@@ -6,7 +6,6 @@
     <h3 class="text">Thông Tin Khách Hàng</h3>
     <p class="text">Quản lý thông tin để bảo mật tài khoản</p>
     <hr />
-    <form runat="server" id="formInfoKH">
         <table class="tblThongtin">
             <tr>
                 <td>
@@ -81,5 +80,4 @@
                 <asp:Button runat="server" Text="Lưu" ID="btnLuu" CssClass="button" OnClick="btnLuu_Click"/>
             </div>
         </center>
-    </form>
 </asp:Content>

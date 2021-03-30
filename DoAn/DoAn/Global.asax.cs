@@ -17,13 +17,16 @@ namespace DoAn
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            Session["tendn"] = "hue@gmail.com";
+            Session["tendn"] = "nam@gmail.com";
             Session["quyen"] = "";
             Session["Manv"] = "";
+            Session["Maxe"] = "";
             Session["Manxe"] = "";
             Session["Matk"] = "";
             Session["them_tt"] = "";
             Session["Makh"] = "";
+            Session["Macx"] = "";
+
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

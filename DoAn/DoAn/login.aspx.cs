@@ -42,18 +42,20 @@ namespace DoAn
                             //Response.Write(Session["tendn"] + "\n" + Session["quyen"]);
                             switch (quyen)
                             {
-                                case "Q00001": Response.Write("quyền nvdh");
+                                case "Q00001":
                                     Response.Redirect("~/NV/nvdh/trangchu_nvdh.aspx");
                                     break;
-                                case "Q00002": Response.Write("quyền admin");
+                                case "Q00002":
                                     Response.Redirect("~/admin/homeadmin.aspx");
                                     break;
-                                case "Q00003": Response.Write("quyền khach");
+                                case "Q00003": 
                                     Response.Redirect("~/index.aspx");
                                     break;
-                                case "Q00004": Response.Write("quyền nvxe");
+                                case "Q00004":
+                                    Response.Redirect("~/NV/nvxe/trangchunvxe.aspx");
                                     break;
-                                case "Q00005": Response.Write("quyền nvbanve");
+                                case "Q00005":
+                                    Response.Redirect("~/NV/nvbv/TTcanhan.aspx");
                                     break;
                             }
                         }

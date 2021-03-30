@@ -13,6 +13,7 @@ namespace DoAn.khachhang
     {
         cs.adminDAL admin = new cs.adminDAL();
         tblKhachhang kh = new tblKhachhang();
+        tbltk tk = new tbltk();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -56,7 +57,9 @@ namespace DoAn.khachhang
 
         protected void btnLuu_Click(object sender, EventArgs e)
         {
-            kh.Makh = Session["Makh"].ToString();
+            kh.Makh = admin.getmakh(Session["tendn"].ToString());
+            //Response.Write("<script>alert('" + kh.Makh + "');</script>");
+
             kh.tenkh = txtTenKH.Text;
             kh.ngaysinh = DateTime.Parse(txtNgaysinh.Text);
             kh.gioitinh = double.Parse(rd_gt_kh.SelectedValue.ToString());

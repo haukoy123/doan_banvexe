@@ -1,0 +1,30 @@
+﻿#sua {
+    margin-top: 30px;
+    padding-left: 30px;
+}
+#sua h3 {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#sua .ftt_nhanxet {
+    padding-top: 15px;
+}
+.nx_input {
+    height: 30px;
+    margin-left: 20px;
+    width: 400px;
+}
+#btn {
+    margin-top: 20px;
+}
+#btn .sua_btn {
+    color: white;
+    background-color:#1b9ce3;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #1b9ce3;
+    border-radius: 10px;
+    margin-left: 10px;
+}

@@ -39,13 +39,14 @@ namespace DoAn.NV.nvdh
             Session["them_tt"] = "";
             vohieuhoa(true, false, false, false);
 
-            string[] arg = new string[2];
+            //string[] arg = new string[2];
             string ma = (sender as LinkButton).CommandArgument.ToString();
-            arg = ma.Split(';');
-            Session["macx"] = arg[0];
-            cx.macx = arg[0];
+            //arg = ma.Split(';');
+            Session["macx"] = ma;
+            cx.macx = ma;
             hien_ddl_dstuyenxe();
-            ds_nvxe_nx();
+            nv.Fk_manx = manx();
+            //ds_nvxe_nx();
             hien_ddl_dsxe();
 
             DataTable cx_nx = admin.ds_chuyenxe_nhaxe(nv);
@@ -69,8 +70,9 @@ namespace DoAn.NV.nvdh
 
                     lbl_macx.Text = cx.macx;
 
-                    ddl_nv.ClearSelection();
-                    ddl_nv.Items.FindByValue(cx_nx.Rows[i]["Fk_manv"].ToString()).Selected = true;
+                    tb_nvxe.Text = cx_nx.Rows[i]["tennv"].ToString();
+                    //ddl_nv.ClearSelection();
+                    //ddl_nv.Items.FindByValue(cx_nx.Rows[i]["Fk_manv"].ToString()).Selected = true;
 
                     ddl_dstuyenxe.ClearSelection();
                     ddl_dstuyenxe.Items.FindByValue(cx_nx.Rows[i]["Fk_matuyenxe"].ToString()).Selected = true;
@@ -80,7 +82,6 @@ namespace DoAn.NV.nvdh
 
                     ddl_ds_xe.ClearSelection();
                     ddl_ds_xe.Items.FindByValue(cx_nx.Rows[i]["maxe"].ToString()).Selected = true;
-
 
                     if (trangthai.Equals("Mở"))
                     {
@@ -146,7 +147,7 @@ namespace DoAn.NV.nvdh
             tb_tencx.Enabled = true;
             //tb_tentx.Enabled = true;
             hien_ddl_dstuyenxe();
-            ds_nvxe_nx();
+            //ds_nvxe_nx();
 
             hien_ddl_dsxe();
             //cx.trangthai = ddl_dstuyenxe.SelectedItem.ToString();
@@ -157,15 +158,15 @@ namespace DoAn.NV.nvdh
         protected void lbt_luu_Click(object sender, EventArgs e)
         {
             cx.trangthai = ddl_tt_nx.SelectedItem.ToString();
-            //cx.Fk_manx_tx = ddl_dstuyenxe.SelectedValue.ToString();
             cx.tencx = tb_tencx.Text;
-            //cx.Fk_maxe = 
             cx.Ngaydi = DateTime.Parse(tb_ngaydi.Text);
             cx.Fk_maxe = ddl_ds_xe.SelectedValue.ToString();
-            cx.Fk_manv = ddl_nv.SelectedValue.ToString();
             cx.trangthai = ddl_tt_nx.SelectedItem.ToString();
 
             nxe.Manx = manx();
+            nx_tx.manx = nxe.Manx;
+            nx_tx.matx = ddl_dstuyenxe.SelectedValue.ToString();
+            nx_tx.trangthai = "Mở";
             int ktratuyen = 1;
 
             if (Session["them_tt"].ToString() != "")
@@ -187,37 +188,35 @@ namespace DoAn.NV.nvdh
                             tb_null();
                         }
                         else Response.Write("<script>alert('Thêm thất bại!');</script>");
-
-                        //Response.Write("<script>alert('" + cx.Fk_manx_tx + "; " + cx.Fk_maxe + ";" + cx.Fk_manv +
-                        //    "; " + cx.tencx + ";" + cx.Ngaydi + ";" + cx.Fk_manx_tx + ";" + cx.trangthai + "');</script>");
                     }
-                    //else
-                    //{
-                        
-                    //    //if (admin.themnx_tx(nx_tx))
-                    //    //{
-
-                    //    //}
-                    //    //Session["them_tt"] = "";
-                    //    //Response.Write("<script>alert('đã có');</script>");
-                    //    //vohieuhoa(false, true, true, true);
-                    //    //tb_null();
-                    //}
                 }
+                //   NHÀ XE CHƯA CÓ TUYẾN THỰC HIỆN THÊM TUYẾN MỚI THÊM CX
                 if (ktratuyen == 1)
                 {
-                       Response.Write("<script>alert('chưa có');</script>");
-                    
-                }
+                    if (admin.themnx_tx(nx_tx))
+                    {
+                        DataTable dsnx_tx2 = admin.ds_tuyenxe_nhaxe(nxe);
+                        for (int i = 0; i < dsnx_tx2.Rows.Count; i++)
+                        {
+                            if (ddl_dstuyenxe.SelectedValue.ToString().Equals(dsnx_tx2.Rows[i]["matuyenxe"].ToString()))
+                            {
+                                // ĐÃ CÓ TUYẾN XE TRONG NHÀ XE
+                                ktratuyen++;
+                                cx.Fk_manx_tx = dsnx_tx2.Rows[i]["manx_tx"].ToString();
 
-                //if (admin.themcx(cx))
-                //{
-                //    vohieuhoa(false, true, true, true);
-                //    Session["them_tt"] = "";
-                //    tb_null();
-                //    Response.Write("<script>alert('Lưu chuyến xe thành công!');</script>");
-                //}
-                //else Response.Write("<script>alert('Lưu chuyến xe thất bại!');</script>");
+                                if (admin.themcx(cx))
+                                {
+                                    Session["them_tt"] = "";
+                                    Response.Write("<script>alert('Thêm thành công!');</script>");
+                                    vohieuhoa(false, true, true, true);
+                                    tb_null();
+                                }
+                                else Response.Write("<script>alert('Thêm thất bại!');</script>");
+                            }
+                        }
+                    }
+                    else Response.Write("<script>alert('Thêm Nhà xe - Tuyến xe thất bại!');</script>");
+                }
             }
             else
             {
@@ -231,8 +230,6 @@ namespace DoAn.NV.nvdh
                 else Response.Write("<script>alert('Cập nhật chuyến xe thất bại!');</script>");
 
             }
-
-
         }
 
         protected void lbt_thoat_Click(object sender, EventArgs e)
@@ -252,8 +249,8 @@ namespace DoAn.NV.nvdh
             tb_tgkt.Text = "";
             tb_tencx.Text = "";
             tb_ngaydi.Text = "";
-
-            ddl_nv.ClearSelection();
+            tb_nvxe.Text = "";
+            //ddl_nv.ClearSelection();
             ddl_dstuyenxe.ClearSelection();
             ddl_tt_nx.ClearSelection();
             ddl_ds_xe.ClearSelection();
@@ -271,19 +268,19 @@ namespace DoAn.NV.nvdh
                     dt.Rows[i]["matuyenxe"].ToString()));
             }
         }
-        protected void ds_nvxe_nx()
-        {
-            ddl_nv.Items.Clear();
-            ddl_nv.Items.Add(new ListItem("---Chọn---", ""));
-            ddl_nv.Items.FindByValue("").Selected = true;
+        //protected void ds_nvxe_nx()
+        //{
+        //    ddl_nv.Items.Clear();
+        //    ddl_nv.Items.Add(new ListItem("---Chọn---", ""));
+        //    ddl_nv.Items.FindByValue("").Selected = true;
 
-            DataTable dt = ds_nv();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                ddl_nv.Items.Add(new ListItem(dt.Rows[i]["tennv"].ToString(),
-                    dt.Rows[i]["manv"].ToString()));
-            }
-        }
+        //    DataTable dt = ds_nv();
+        //    for (int i = 0; i < dt.Rows.Count; i++)
+        //    {
+        //        ddl_nv.Items.Add(new ListItem(dt.Rows[i]["tennv"].ToString(),
+        //            dt.Rows[i]["manv"].ToString()));
+        //    }
+        //}
         protected void hien_ddl_dsxe()
         {
             ddl_ds_xe.Items.Clear();
@@ -303,6 +300,52 @@ namespace DoAn.NV.nvdh
             {
                 ddl_ds_xe.Items.Add(new ListItem(dt.Rows[i]["biensoxe"].ToString(),
                     dt.Rows[i]["maxe"].ToString()));
+            }
+        }
+
+        protected void ddl_dstuyenxe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddl_dstuyenxe.SelectedValue.ToString() == "")
+            {
+                tb_tgkh.Text = "";
+                tb_tgkt.Text = "";
+            }
+            else
+            {
+                DataTable ds_tx = admin.dsTuyenxe();
+                for (int i = 0; i < ds_tx.Rows.Count; i++)
+                {
+                    if (ddl_dstuyenxe.SelectedValue.ToString().Equals(ds_tx.Rows[i]["matuyenxe"].ToString()))
+                    {
+                        tb_tgkh.Text = ds_tx.Rows[i]["giokh"].ToString();
+                        tb_tgkt.Text = ds_tx.Rows[i]["gioden"].ToString();
+                    }
+                }
+            }
+        }
+
+        protected void ddl_ds_xe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string maxe = ddl_ds_xe.SelectedValue.ToString();
+            nxe.Manx = manx();
+            string manv = "";
+            DataTable dt = admin.dsxe_nhaxe(nxe);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (maxe == dt.Rows[i]["maxe"].ToString())
+                {
+                    manv = dt.Rows[i]["Fk_manv"].ToString();
+                }
+            }
+            DataTable dt1 = admin.get_tt_nhanvien(manv);
+            if (dt1.Rows.Count == 1)
+            {
+                tb_nvxe.Text = dt1.Rows[0]["tennv"].ToString();
+            }
+            else
+            {
+                tb_nvxe.Text = "";
+
             }
         }
 

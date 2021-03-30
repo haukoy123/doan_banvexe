@@ -22,5 +22,36 @@ namespace DoAn
                 btnuser.Visible = true;
             }
         }
+        protected void linkbtn_Click(object sender, EventArgs e)
+        {
+            Session["tendn"] = "";
+            Session["quyen"] = "";
+            Response.Redirect("index.aspx");
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnDoimk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("khachhang/Doimatkhau.aspx");
+        }
+
+        protected void btnNhanxe_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("khachhang/Nhanxet.aspx");
+        }
+
+        protected void btnVecuatoi_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("khachhang/Vecuatoi.aspx");
+        }
+
+        protected void btnQLKH_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("khachhang/QLkhachhang.aspx");
+        }
     }
 }

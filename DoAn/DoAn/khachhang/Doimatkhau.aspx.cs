@@ -20,14 +20,24 @@ namespace DoAn.khachhang
 
         protected void btnXacnhan_Click(object sender, EventArgs e)
         {
-            tk.Matk = int.Parse(Session["Matk"].ToString());
+            tk.Matk = int.Parse(admin.getmatk(Session["tendn"].ToString()));
             tk.Tendn = Session["Tendn"].ToString();
-
+            tk.Fk_maquyen = Session["quyen"].ToString();
+            tk.Trangthai = Session["them_tt"].ToString();
+            tk.Matkhau = txtMKmoi.Text;
+            if (admin.updateTk(tk))
+            {
+                Response.Write("<script>alert('Thay đổi mật khẩu thành công!');</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('Thay đổi mật khẩu không thành công!');</script>");
+            }
         }
 
         protected void btnHuy_Click(object sender, EventArgs e)
         {
-            Response.Redirect("QLkhachhang.aspx");
+            Response.Redirect("../khachhang/QLkhachhang.aspx");
         }
     }
 }

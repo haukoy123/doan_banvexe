@@ -40,6 +40,51 @@ namespace DoAn {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnuser;
         
         /// <summary>
+        /// btnQLKH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnQLKH;
+        
+        /// <summary>
+        /// btnVecuatoi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnVecuatoi;
+        
+        /// <summary>
+        /// btnNhanxe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnNhanxe;
+        
+        /// <summary>
+        /// btnDoimk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnDoimk;
+        
+        /// <summary>
+        /// LinkButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        
+        /// <summary>
         /// banner control.
         /// </summary>
         /// <remarks>
@@ -112,21 +157,66 @@ namespace DoAn {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Thongtin;
         
         /// <summary>
-        /// khachhang control.
+        /// DSNhaxe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl khachhang;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder DSNhaxe;
         
         /// <summary>
-        /// KHInfo control.
+        /// gd_kh_cx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder KHInfo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl gd_kh_cx;
+        
+        /// <summary>
+        /// gd_tk_cx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder gd_tk_cx;
+        
+        /// <summary>
+        /// datve control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl datve;
+        
+        /// <summary>
+        /// dv_boloc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder dv_boloc;
+        
+        /// <summary>
+        /// gd_ttkh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder gd_ttkh;
+        
+        /// <summary>
+        /// gd_datve control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder gd_datve;
     }
 }

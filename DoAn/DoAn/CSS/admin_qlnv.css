@@ -46,6 +46,23 @@
     font-size: 15px;
 }
 
+.css_intput_tuyenxe {
+    width: 299px;
+    height: 23px;
+    font-size: 15px;
+}
+
+.css_ghe_mau {
+    width: 100px;
+    height: 23px;
+    font-size: 15px;
+}
+.css_tbtuyenxe {
+    width: 130px;
+    height: 23px;
+    font-size: 15px;
+}
+
 .css_nhapnv {
     float: left;
     padding-left: 5px;
@@ -106,4 +123,14 @@ table#gd_them_cld_ns_nv {
     background: #9ad5dc;
     margin: 5px;
     background: #e4ce2d;
+}
+
+.tim_cx {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px 15px;
+    background: #969696;
+}
+.tim_cx:hover{
+        background: #676565;
 }

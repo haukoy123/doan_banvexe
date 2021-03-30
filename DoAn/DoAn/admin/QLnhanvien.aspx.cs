@@ -160,6 +160,7 @@ namespace DoAn.admin
                     tb_dc_nv.Text = tknv.Rows[i]["diachi"].ToString();
                     tb_email_nv.Text = tknv.Rows[i]["email"].ToString();
                     tb_cmt_nv.Text = tknv.Rows[i]["cmnd"].ToString();
+
                     tb_bophan_nv.Text = ddl_quyen.SelectedItem.ToString();
                 }
             }
@@ -206,7 +207,6 @@ namespace DoAn.admin
             nv.Tennv = tb_ten_nv.Text;
             nv.Fk_manx = Session["Manxe"].ToString();
             nv.Ngaysinh = DateTime.Parse(tb_ns_nv.Text);
-            //nv.Ngaysinh = Convert.ToDateTime(tb_ns_nv.Text);
 
             nv.Gioitinh = double.Parse(rd_gt_nv.SelectedValue.ToString());
             nv.Sdt = tb_dt_nv.Text;

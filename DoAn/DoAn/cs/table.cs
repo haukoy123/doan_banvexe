@@ -55,7 +55,7 @@ namespace DoAn.cs
     public class tblLichtrinh
     {
         public string malt { set; get; }
-        public string Fk_macx { set; get; }
+        public string Fk_matx { set; get; }
         public string diemden { set; get; }
         public int giave { set; get; }
         public string trangthai { set; get; }
@@ -66,10 +66,9 @@ namespace DoAn.cs
         public string macx { set; get; }
         public string Fk_manx_tx { set; get; }
         public string Fk_maxe { set; get; }
-        public string Fk_manv { set; get; }
         public string tencx { set; get; }
         public DateTime Ngaydi { set; get; }
-        public string Fk_matkcx { set; get; }
+        //public string Fk_matkcx { set; get; }
         public string trangthai { set; get; }
     }
 
@@ -77,6 +76,7 @@ namespace DoAn.cs
     {
         public string maxe { set; get; }
         public string Fk_manx { set; get; }
+        public string Fk_manv { set; get; }
         public string biensoxe { set; get; }
         public string mauxe { set; get; }
         public string loaixe { set; get; }
@@ -94,6 +94,7 @@ namespace DoAn.cs
         public DateTime thoigiandatve { set; get; }
         public string diemden { set; get; }
         public int soghe { set; get; }
+        public int tongtien { set; get; }
         public string trangthai { set; get; }
     }
     public class tblTuyenxe
@@ -102,7 +103,6 @@ namespace DoAn.cs
         public string tentx { set; get; }
         public DateTime giokh { set; get; }
         public DateTime gioden { set; get; }
-
         public string tinhdi { set; get; }
         public string tinhden { set; get; }
     }

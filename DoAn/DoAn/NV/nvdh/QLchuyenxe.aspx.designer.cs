@@ -22,24 +22,6 @@ namespace DoAn.NV.nvdh {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuhead;
         
         /// <summary>
-        /// Label19 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label19;
-        
-        /// <summary>
-        /// ddl_dsnhaxe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_dsnhaxe;
-        
-        /// <summary>
         /// Label18 control.
         /// </summary>
         /// <remarks>
@@ -139,13 +121,13 @@ namespace DoAn.NV.nvdh {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// ddl_nv control.
+        /// tb_nvxe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_nv;
+        protected global::System.Web.UI.WebControls.TextBox tb_nvxe;
         
         /// <summary>
         /// Label4 control.

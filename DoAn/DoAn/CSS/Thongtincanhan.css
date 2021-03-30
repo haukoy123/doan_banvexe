@@ -1,0 +1,58 @@
+﻿#gd_ttnv {
+    border: 3px solid dimgray;
+    margin: 0px 50px 0px 50px;
+    border-radius: 5px;
+}
+
+    #gd_ttnv .text {
+        padding-left: 15px;
+    }
+
+#thongtin {
+    padding: 11px 30px;
+}
+
+    #thongtin .gd_ttnv_left {
+        float: left;
+    }
+
+    #thongtin .gd_ttnv_right {
+        display: inline-block;
+        padding-left: 30px;
+    }
+
+        #thongtin .gd_ttnv_right .gd_ttnv_right_1 {
+            float: left;
+        }
+
+        #thongtin .gd_ttnv_right .gd_ttnv_right_2 {
+            display: inline-block;
+            padding-left: 30px;
+        }
+
+.lbl_tt {
+    font-weight: bold;
+}
+
+.textbox {
+    padding: 5px;
+    width: 280px;
+    margin: 10px 0px;
+}
+
+.rd_gt {
+    width: 280px;
+    margin: 6px 0px;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+.linkbtn {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px 13px;
+    background-color: #1b9ce3;
+    color: white;
+}

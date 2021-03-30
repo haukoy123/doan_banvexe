@@ -39,7 +39,6 @@ namespace DoAn.cs
         public DataTable get_nhaxe(string dt, string email)
         {
             DataTable data = new DataTable();
-            //string manx = "";
             using (SqlConnection cnn = dtcn.getconnect())
             {
                 cnn.Open();
@@ -62,7 +61,6 @@ namespace DoAn.cs
         public DataTable get_tk_nhanvien(string matk)
         {
             DataTable data = new DataTable();
-            //string manx = "";
             using (SqlConnection cnn = dtcn.getconnect())
             {
                 cnn.Open();
@@ -83,7 +81,6 @@ namespace DoAn.cs
         public DataTable get_tt_nhanvien(string manv)
         {
             DataTable data = new DataTable();
-            //string manx = "";
             using (SqlConnection cnn = dtcn.getconnect())
             {
                 cnn.Open();
@@ -525,6 +522,29 @@ namespace DoAn.cs
         }
 
         ////////////////huế/////////////////////////
+       
+        public string getmakh(string email)
+        {
+            string makh = "";
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("timmakh", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@gmail", email);
+                    SqlDataReader abc = cmd.ExecuteReader();
+                    if (abc.HasRows)
+                    {
+                        while (abc.Read())
+                        {
+                            makh = abc["makh"].ToString();
+                        }
+                    }
+                    return makh;
+                }
+            }
+        }
         public bool themkh(tblKhachhang kh)
         {
             using (SqlConnection cnn = dtcn.getconnect())
@@ -582,7 +602,129 @@ namespace DoAn.cs
                 return true;
             }
         }
+        public DataTable tt_chuyenxe()
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("chitiet_cx", cnn))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter("chitiet_cx", cnn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            cnn.Close();
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
 
+        public DataTable tt_lt()
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("chitiet_lt_tx_cx", cnn))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter("chitiet_lt_tx_cx", cnn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            cnn.Close();
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
+
+        public DataTable get_chitiet_vx_kh(int matk)
+        {
+            DataTable data = new DataTable();
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("chitiet_vx_kh", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@matk", matk);
+                    SqlDataReader abc = cmd.ExecuteReader();
+                    if (abc.HasRows)
+                    {
+                        data.Load(abc);
+                    }
+                    cnn.Close();
+                    return data;
+                }
+            }
+        }
+        public DataTable get_cx_vx()
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("cx_vexe", cnn))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter("cx_vexe", cnn))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            cnn.Close();
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
+
+        public string getmanv(string email)
+        {
+            string manv = "";
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("timmanv", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@gmail", email);
+                    SqlDataReader abc = cmd.ExecuteReader();
+                    if (abc.HasRows)
+                    {
+                        while (abc.Read())
+                        {
+                            manv = abc["manv"].ToString();
+                        }
+                    }
+                    return manv;
+                }
+            }
+        }
+
+        public DataTable get_ttnv_tknx(string tendn)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("chitiet_tt_nv", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@tendn", tendn);
+                    SqlDataReader abc = cmd.ExecuteReader();
+                    if (abc.HasRows)
+                    {
+                        dt.Load(abc);
+                    }
+                    cnn.Close();
+                    return dt;
+                }
+            }
+        }
         ///////////
         public bool themnx_tx(tblnx_tx nx_tx)
         {
@@ -610,7 +752,6 @@ namespace DoAn.cs
             }
         }
 
-
         public bool themcx(tblChuyenxe cx)
         {
             using (SqlConnection cnn = dtcn.getconnect())
@@ -622,7 +763,6 @@ namespace DoAn.cs
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@maxe", cx.Fk_maxe);
-                        cmd.Parameters.AddWithValue("@manv", cx.Fk_manv);
                         cmd.Parameters.AddWithValue("@tenchuyen", cx.tencx);
                         cmd.Parameters.AddWithValue("@ngaydi", cx.Ngaydi);
                         cmd.Parameters.AddWithValue("@manxtx", cx.Fk_manx_tx);
@@ -699,8 +839,327 @@ namespace DoAn.cs
                 }
             }
         }
-       
 
+        public DataTable dschitietve()
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("ttchitietve", cnn))
+                {
+                    using (SqlDataAdapter data = new SqlDataAdapter("ttchitietve", cnn))
+                    {
+                        using (DataTable abc = new DataTable())
+                        {
+                            data.Fill(abc);
+                            cnn.Close();
+                            return abc;
+                        }
+                    }
+                }
+            }
+        }
+
+        public DataTable dschitietve_nv()
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("ttchitietve_nv", cnn))
+                {
+                    using (SqlDataAdapter data = new SqlDataAdapter("ttchitietve_nv", cnn))
+                    {
+                        using (DataTable abc = new DataTable())
+                        {
+                            data.Fill(abc);
+                            cnn.Close();
+                            return abc;
+                        }
+                    }
+                }
+            }
+        }
+
+        public DataTable get_ttkh(tblKhachhang kh)
+        {
+            DataTable data = new DataTable();
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("ttKh", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@makh", kh.Makh );
+                    SqlDataReader abc = cmd.ExecuteReader();
+                    if (abc.HasRows)
+                    {
+                        data.Load(abc);
+                    }
+                    cnn.Close();
+                    return data;
+                }
+            }
+        }
+        public DataTable get_dslichtrinh()
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("dslichtrinh", cnn))
+                {
+                    using (SqlDataAdapter data = new SqlDataAdapter("dslichtrinh", cnn))
+                    {
+                        using (DataTable abc = new DataTable())
+                        {
+                            data.Fill(abc);
+                            cnn.Close();
+                            return abc;
+                        }
+                    }
+                }
+            }
+        }
+
+        public DataTable get_dslichtrinh_diadiem(string diemdi, string diemden )
+        {
+            DataTable data = new DataTable();
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                using (SqlCommand cmd = new SqlCommand("gettx_diemdung", cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@diemdi",diemdi);
+                    cmd.Parameters.AddWithValue("@diemden", diemden);
+
+                    SqlDataReader abc = cmd.ExecuteReader();
+                    if (abc.HasRows)
+                    {
+                        data.Load(abc);
+                    }
+                    cnn.Close();
+                    return data;
+                }
+            }
+        }
+        public bool updateVexe(tblVexe vx)
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("updatevexe", cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@mave", vx.mavx);
+                        cmd.Parameters.AddWithValue("@diemden", vx.diemden);
+                        cmd.Parameters.AddWithValue("@tenkh", vx.tenkh);
+                        cmd.Parameters.AddWithValue("@sdt", vx.sdt);
+                        cmd.Parameters.AddWithValue("@soghe", vx.soghe);
+                        cmd.Parameters.AddWithValue("@tongtien", vx.tongtien);
+                        cmd.Parameters.AddWithValue("@trangthai ", vx.trangthai);
+                        cmd.ExecuteNonQuery();
+                        cnn.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+        public bool themvx(tblVexe vx)
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("them_ve", cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@machuyen", vx.Fk_macx);
+                        cmd.Parameters.AddWithValue("@matk", vx.Fk_matk);
+                        cmd.Parameters.AddWithValue("@diemden", vx.diemden);
+                        cmd.Parameters.AddWithValue("@tenkh", vx.tenkh);
+                        cmd.Parameters.AddWithValue("@sdt", vx.sdt);
+                        cmd.Parameters.AddWithValue("@thoigian", vx.thoigiandatve);
+                        cmd.Parameters.AddWithValue("@soghe", vx.soghe);
+                        cmd.Parameters.AddWithValue("@trangthai", vx.trangthai);
+                        cmd.Parameters.AddWithValue("@tongtien", vx.tongtien);
+                        cmd.ExecuteNonQuery();
+                        cnn.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+
+        public bool themxe(tblXe xe)
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("them_xe", cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@manx", xe.Fk_manx);
+                        cmd.Parameters.AddWithValue("@manv", xe.Fk_manv);
+                        cmd.Parameters.AddWithValue("@bienso", xe.biensoxe);
+                        cmd.Parameters.AddWithValue("@mauxe", xe.mauxe);
+                        cmd.Parameters.AddWithValue("@loaixe", xe.loaixe);
+                        cmd.Parameters.AddWithValue("@soghe", xe.soghe);
+                        cmd.Parameters.AddWithValue("@trangthai", xe.trangthai);
+                        cmd.ExecuteNonQuery();
+                        cnn.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+        public bool updatexe(tblXe xe)
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("updatexe", cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@maxe", xe.maxe);
+                        cmd.Parameters.AddWithValue("@manv", xe.Fk_manv);
+                        cmd.Parameters.AddWithValue("@trangthai ", xe.trangthai);
+                        cmd.ExecuteNonQuery();
+                        cnn.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+        public bool themtuyen(tblTuyenxe tx)
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("them_tuyenxe", cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@tentuyen", tx.tentx);
+                        cmd.Parameters.AddWithValue("@tinhdi", tx.tinhdi);
+                        cmd.Parameters.AddWithValue("@tinhden", tx.tinhden);
+                        cmd.Parameters.AddWithValue("@tgkh", tx.giokh);
+                        cmd.Parameters.AddWithValue("@tgkt", tx.gioden);
+                        cmd.ExecuteNonQuery();
+                        cnn.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+        public bool themlichtrinh( tblLichtrinh ltr)
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("them_lichtrinh", cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@matuyen", ltr.Fk_matx);
+                        cmd.Parameters.AddWithValue("@diemden", ltr.diemden);
+                        cmd.Parameters.AddWithValue("@gia", ltr.giave);
+                        cmd.Parameters.AddWithValue("@trangthai", ltr.trangthai);
+                        cmd.ExecuteNonQuery();
+                        cnn.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+
+        public bool updateltr(tblLichtrinh ltr)
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("updateltr", cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@maltr", ltr.malt);
+                        cmd.Parameters.AddWithValue("@trangthai ", ltr.trangthai);
+                        cmd.ExecuteNonQuery();
+                        cnn.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+
+        public bool updatetuyen(tblTuyenxe tx)
+        {
+            using (SqlConnection cnn = dtcn.getconnect())
+            {
+                cnn.Open();
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("updatetuyen", cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@matuyen", tx.matx);
+                        cmd.Parameters.AddWithValue("@tentuyen", tx.tentx);
+                        cmd.Parameters.AddWithValue("@tinhdi", tx.tinhdi);
+                        cmd.Parameters.AddWithValue("@tinhden", tx.tinhden);
+                        cmd.Parameters.AddWithValue("@gioden", tx.gioden);
+                        cmd.Parameters.AddWithValue("@giokh", tx.giokh);
+                        cmd.ExecuteNonQuery();
+                        cnn.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
 
     }
 }

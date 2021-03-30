@@ -31,6 +31,7 @@
                     <ul>
                         <li class="vienmenu"><i class="fas fa-id-card iconstyle"></i><a href="../admin/QLtaikhoan.aspx">Quản Lý Tài Khoản</a></li>
                         <li class="vienmenu"><i class="fas fa-bed iconstyle"></i><a href="../admin/QLnhanvien.aspx">Quản Lý Nhân Viên</a></li>
+                        <li class="vienmenu"><i class="fas fa-route iconstyle"></i><a href="../admin/QLtuyen.aspx">Quản Lý Tuyến</a></li>
                         <li class="vienmenu"><i class="fas fa-shuttle-van iconstyle"></i><a href="../admin/QLnhaxe.aspx">Quản Lý Nhà Xe</a></li>
                     </ul>
                 </div>
@@ -47,6 +48,11 @@
                         <li class="vienmenu2"><a href="../admin/QLnhanvien.aspx"><i class="fas fa-bed iconstyle"></i></a>
                             <div class="txt">
                                 Quản Lý Nhân Viên
+                            </div>
+                        </li>
+                        <li class="vienmenu2"><a href="../admin/QLtuyen.aspx"><i class="fas fa-route iconstyle"></i></a>
+                            <div class="txt">
+                                Quản Lý Tuyến
                             </div>
                         </li>
                         <li class="vienmenu2"><a href="../admin/QLnhaxe.aspx"><i class="fas fa-shuttle-van iconstyle"></i></a>

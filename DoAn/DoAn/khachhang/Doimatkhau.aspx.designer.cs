@@ -13,15 +13,6 @@ namespace DoAn.khachhang {
     public partial class Doimatkhau {
         
         /// <summary>
-        /// fDoimk control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm fDoimk;
-        
-        /// <summary>
         /// txtMKcu control.
         /// </summary>
         /// <remarks>
@@ -47,15 +38,6 @@ namespace DoAn.khachhang {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtrpMK;
-        
-        /// <summary>
-        /// CompareValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
         /// btnXacnhan control.

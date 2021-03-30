@@ -1,25 +1,363 @@
-﻿#nav-left ul {
-    list-style-type: none;
+﻿* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     margin: 0;
     padding: 0;
-    width: 25%;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
 }
 
-    #nav-left ul li a {
-        display: block;
-        color: #000;
-        padding: 8px 16px;
-        text-decoration: none;
+html, body {
+    font-family: sans-serif;
+}
+
+#header {
+    width: 100%;
+    height: 70px;
+}
+
+    #header .container {
+        width: 1000px;
+        margin: 0px auto;
+        height: 70px;
     }
 
-        #nav-left ul li a.active {
+        #header .container div.logo {
+            width: 250px;
+            float: left;
+            height: 70px;
+        }
+
+            #header .container div.logo a {
+                text-decoration: none;
+                display: block;
+                line-height: 70px;
+                height: 70px;
+            }
+
+        #header .container div.register-login {
+            float: left;
+            width: 750px;
+            height: 70px;
+        }
+
+            #header .container div.register-login ul {
+                margin: 0px;
+                padding: 0px;
+                list-style-type: none;
+                float: left;
+            }
+
+                #header .container div.register-login ul li {
+                    display: inline-block;
+                    height: 70px;
+                    margin-left: 15px;
+                }
+
+                    #header .container div.register-login ul li .contact-icon {
+                        float: left;
+                        height: 70px;
+                        width: 35px;
+                        line-height: 70px;
+                    }
+
+                    #header .container div.register-login ul li div.contact-text {
+                        float: left;
+                        height: 70px;
+                        color: rgba(0, 0, 0, 0.7);
+                    }
+
+                        #header .container div.register-login ul li div.contact-text label {
+                            width: 100%;
+                            display: block;
+                            font-weight: bold;
+                            margin-top: 15px;
+                        }
+
+            #header .container div.register-login a.register, a.login {
+                text-decoration: none;
+                display: block;
+                color: #FFF;
+                width: 120px;
+                font-size: 17px;
+                height: 40px;
+                border-radius: 10px;
+                text-align: center;
+                background-color: #1b9ce3;
+                float: left;
+                line-height: 40px;
+                margin-top: 15px;
+                margin-left: 10px;
+                margin-bottom: 15px;
+            }
+
+#btnuser.dropdown1 {
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+}
+
+    #btnuser.dropdown1 .dropbtn1 {
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+        display: block;
+        border-radius: 5px;
+        background: #1b9ce3;
+        color: white;
+        width: 50px;
+        height: 30px;
+    }
+
+    #btnuser.dropdown1 .dropdown-content1 {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    #btnuser.dropdown1:hover .dropdown-content1 {
+        display: block;
+    }
+
+    #btnuser.dropdown1 .dropdown-content1 a {
+        color: black;
+        padding: 10px 14px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+        #btnuser.dropdown1 .dropdown-content1 a:hover {
             color: #1b9ce3;
         }
 
-        #nav-left ul li a:hover:not(.active) {
-            color: #1b9ce3;
+#nav {
+    width: 100%;
+    height: 50px;
+    background: #333;
+}
+
+    #nav .container {
+        width: 1000px;
+        margin: 0px auto;
+    }
+
+        #nav .container ul.menu {
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+            float: left;
+            width: 1000px;
+        }
+
+            #nav .container ul.menu li {
+                display: inline-block;
+            }
+
+                #nav .container ul.menu li a, .dropbtn {
+                    text-decoration: none;
+                    height: 50px;
+                    display: block;
+                    color: #FFF;
+                    line-height: 50px;
+                    padding-left: 45px;
+                    padding-right: 45px;
+                }
+
+                #nav .container ul.menu li.dropdown {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                    #nav .container ul.menu li.dropdown .dropbtn {
+                        border: none;
+                        cursor: pointer;
+                    }
+
+                    #nav .container ul.menu li.dropdown div.dropdown-content {
+                        display: none;
+                        position: absolute;
+                        background-color: #f9f9f9;
+                        min-width: 160px;
+                        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                        z-index: 1;
+                    }
+
+                        #nav .container ul.menu li.dropdown div.dropdown-content a {
+                            color: black;
+                            padding: 10px 14px;
+                            text-decoration: none;
+                            display: block;
+                            text-align: left;
+                        }
+
+                #nav .container ul.menu li a:hover {
+                    background-color: rgba(0,0,0,0.2);
+                }
+
+                #nav .container ul.menu li.dropdown div.dropdown-content a:hover {
+                    background-color: #f1f1f1;
+                }
+
+                #nav .container ul.menu li.dropdown:hover .dropdown-content {
+                    display: block;
+                }
+
+#content {
+    width: 100%;
+    background-color: gainsboro;
+}
+
+    #content .container {
+        width: 1000px;
+        margin: 0px auto;
+        min-height: 730px;
+        padding-top: 50px;
+    }
+
+        #content .container .content-left,
+        #content .container .content-right {
+            float: left;
+            background-color: ghostwhite;
+        }
+
+        #content .container .content-left {
+            width: 250px;
+            border: 1px solid gainsboro;
+            border-radius: 5px;
+        }
+
+        #content .container .content-right {
+            margin-left: 40px;
+            width: 710px;
+            float: left;
+            min-height: 650px;
+            border: 1px solid gainsboro;
+            border-radius: 5px;
+        }
+
+        #content .container .content-left ul {
+            list-style-type: none;
+            margin: 20px;
+        }
+
+            #content .container .content-left ul li {
+                padding-bottom: 25px;
+            }
+
+                #content .container .content-left ul li a {
+                    text-decoration: none;
+                    color: black;
+                }
+
+                    #content .container .content-left ul li a:hover {
+                        color: #1b9ce3;
+                    }
+
+                    #content .container .content-left ul li a:hover:not(.active) {
+                        color: #1b9ce3;
+                    }
+
+.text {
+    margin: 25px;
+}
+
+    .text h3 {
+        font-weight: 100;
+        font-size: 25px;
+        line-height: 1.5;
+    }
+
+.tblThongtin {
+    margin: 20px 20px 15px 20px;
+}
+
+    .tblThongtin tr {
+        line-height: 2.1;
+    }
+
+        .tblThongtin tr td {
+            padding: 10px 0px 10px 20px;
+        }
+
+            .tblThongtin tr td .textbox {
+                height: 30px;
+                width: 350px;
+                border-radius: 5px;
+                padding-left: 10px;
+            }
+
+#btn {
+    padding-bottom: 20px;
+}
+
+    #btn .button {
+        width: 70px;
+        height: 40px;
+        background-color: royalblue;
+        color: ghostwhite;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        #btn .button:hover {
+            background-color: cornflowerblue;
+        }
+
+#fVe {
+}
+
+    #fVe ul.menuVe {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        float: left;
+        width: 1000px;
+    }
+
+        #fVe ul.menuVe li {
+            display: inline-block;
+        }
+
+            #fVe ul.menuVe li a {
+                text-decoration: none;
+                height: 40px;
+                display: block;
+                line-height: 50px;
+                padding-left: 45px;
+                padding-right: 45px;
+                color: black;
+            }
+
+                #fVe ul.menuVe li a:hover.active {
+                    color: #1b9ce3;
+                }
+
+                #fVe ul.menuVe li a:hover:not(.active) {
+                    color: #1b9ce3;
+                }
+
+#footer {
+    width: 100%;
+    height: 110px;
+    background-color: gainsboro;
+    border-top: 3px solid chocolate;
+}
+
+    #footer .container {
+        width: 1000px;
+        margin: 0px auto;
+        height: 110px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: ghostwhite;
+    }
+
+        #footer .container p {
+            text-align: center;
         }

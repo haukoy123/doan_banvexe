@@ -1,0 +1,124 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Nhaxe.master.cs" Inherits="DoAn.Nhaxe.Nhaxe" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Quản lý bán vé xe khách online</title>
+    <%--<link href="../CSS/Homemaster.css" rel="stylesheet" />--%>
+    <link href="../CSS/dropdown.css" rel="stylesheet" />
+    <link href="../CSS/QLNhaxe.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server" id="form1">
+        <div id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="#">
+                        <img src="../IMG/LOGO.png" alt="Logo" style="width: 120px;" />
+                    </a>
+                </div>
+                <div class="register-login">
+                    <ul style="margin-left: 10px;">
+                        <li>
+                            <div class="contact-icon">
+                                <span class="fa fa-paper-plane" style="font-size: 20px; color: #1b9ce3;"></span>
+                            </div>
+                            <div class="contact-text">
+                                <label>Email</label>
+                                <span>vexeonline@gmail.com</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <span class="fa fa-phone" style="font-size: 25px; color: #1b9ce3;"></span>
+                            </div>
+                            <div class="contact-text">
+                                <label>Liên hệ</label>
+                                <span>SĐT: 0965 545 739</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul id="btndndk" runat="server" style="margin-left: 30px;">
+                        <li>
+                            <a href="../register.aspx" class="register"><span class="fa fa-user-plus" style="font-size: 20px;"></span>Đăng ký</a>
+                        </li>
+                        <li>
+                            <a href="../login.aspx" class="login"><span class="fa fa-user-circle-o" style="font-size: 20px;"></span>Đăng nhập</a>
+                        </li>
+                    </ul>
+
+                    <div class="dropdown1" id="btnuser" runat="server">
+                        <button class="dropbtn1"><span class="fa fa-user-circle-o" style="font-size: 20px;"></span><span class="fa fa-caret-down" style="font-size: 20px; margin-left: 10px;"></span></button>
+                        <div class="dropdown-content1">
+                            <a href="../khachhang/QLkhachhang.aspx"><span class="fa fa-address-book-o" style="font-size: 20px; margin-right: 10px;"></span>Thông tin cá nhân</a>
+                            <a href="../khachhang/Vecuatoi.aspx"><span class="fa fa-ticket" style="font-size: 20px; margin-right: 10px;"></span>Vé của tôi</a>
+                            <a href="../khachhang/Nhanxet.aspx"><span class="fa fa-edit" style="font-size: 20px; margin-right: 10px;"></span>Nhận xét của tôi</a>
+                            <a href="../khachhang/Doimatkhau.aspx"><span class="fa fa-edit" style="font-size: 20px; margin-right: 10px;"></span>Đổi mật khẩu</a>
+                            <a href="~/index.aspx"><span class="fa fa-sign-out" style="font-size: 20px; margin-right: 10px;"></span>Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="nav">
+            <div class="container">
+                <ul class="menu">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="Datve/datve.aspx">Đặt vé</a></li>
+                    <li><a href="#">Khuyến mãi</a></li>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Hỗ trợ</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Xem thêm</a>
+                        <div class="dropdown-content">
+                            <a href="#">Nhà xe</a>
+                            <a href="#">Điểm đến</a>
+                            <a href="#">Tuyến xe</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div class="container">
+                <div class="content-left">
+                    <h3 style="text-align: center; padding-bottom: 10px; padding-top: 10px; font-size: 18px; font-weight: 400; color: #1b9ce3;">Danh sách các nhà xe</h3>
+                    <hr />
+                    <ul>
+                        <li>
+                            <asp:LinkButton runat="server"><i class="fa fa-bus" style="font-size: 20px; margin-right: 10px;"></i>Nhà xe Văn Minh</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton runat="server"><i class="fa fa-bus" style="font-size: 20px; margin-right: 10px;"></i>Nhà xe Phương Hà</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton runat="server"><i class="fa fa-bus" style="font-size: 20px; margin-right: 10px;"></i>Nhà xe Tuấn Đạt</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton runat="server"><i class="fa fa-bus" style="font-size: 20px; margin-right: 10px;"></i>Nhà xe Phương Dũng</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton runat="server"><i class="fa fa-bus" style="font-size: 20px; margin-right: 10px;"></i>Nhà xe Khánh Hoàn</asp:LinkButton></li>
+                    </ul>
+                </div>
+                <div class="content-right">
+                    <asp:ContentPlaceHolder ID="Thongtinnhaxe" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                    <asp:ContentPlaceHolder runat="server" ID="Comment">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        <center>
+            <div id="footer">
+                <div class="container">
+                    <p><b>Công ty TNHH Thương Mại Dịch Vụ VEXEONLINE</b></p>
+                    <p>Địa chỉ: 96 Định Công, Hoàng Mai, Hà Nội, Việt Nam</p>
+                    <p>Bản quyền © 2020 thuộc về VEXEONLINE.com</p>
+                </div>
+            </div>
+        </center>
+    </form>
+</body>
+</html>
